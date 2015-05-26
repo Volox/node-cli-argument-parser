@@ -1,0 +1,17 @@
+{
+  "name": "@social/cli-argument-parser",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./index.js",
+  "scripts": {},
+  "repository": {},
+  "author": "Volox <voloxxx@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.9.3"
+  },
+  "devDependencies": {
+    "chai": "2.x",
+    "mocha": "2.x"
+  }
+}
