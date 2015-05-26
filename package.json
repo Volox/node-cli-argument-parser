@@ -4,7 +4,10 @@
   "description": "",
   "main": "./index.js",
   "scripts": {},
-  "repository": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Volox/node-cli-argument-parser.git"
+  },
   "author": "Volox <voloxxx@gmail.com>",
   "license": "MIT",
   "dependencies": {
