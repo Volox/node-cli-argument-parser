@@ -135,7 +135,7 @@ describe( 'The parser', function() {
         expect( result.s[ 0 ] ).to.be.true;
         expect( result.longArgument[ 0 ] ).to.have.key( 'test' );
       } );
-      it( 'repeated keys', function() {
+      it( 'repeated keys with index', function() {
         var result = parse( '-s:0 -s:1 5 -s:3 hello' );
         expect( result ).to.have.keys( 's', '_' );
         expect( result.s ).to.be.instanceOf( Array );
@@ -143,6 +143,17 @@ describe( 'The parser', function() {
         expect( result.s[ 0 ] ).to.be.true;
         expect( result.s[ 1 ] ).to.be.equal( 5 );
         expect( result.s[ 3 ] ).to.be.equal( 'hello' );
+      } );
+      it( 'repeated keys without index', function() {
+        var result = parse( '-s hello -s world -s test,5 -s' );
+        expect( result ).to.have.keys( 's', '_' );
+        expect( result.s ).to.be.instanceOf( Array );
+        expect( result.s ).to.have.length( 5 );
+        expect( result.s[ 0 ] ).to.be.equal( 'hello' );
+        expect( result.s[ 1 ] ).to.be.equal( 'world' );
+        expect( result.s[ 2 ] ).to.be.equal( 'test' );
+        expect( result.s[ 3 ] ).to.be.equal( 5 );
+        expect( result.s[ 4 ] ).to.be.true;
       } );
     } );
   } );
